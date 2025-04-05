@@ -14,9 +14,27 @@
     <link rel="stylesheet" href="static/stylesheets/layout.css">
 
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/46491960">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PZXKVT8M');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZXKVT8M" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="container">
         <header class="three columns">
             <img src="https://avatars.githubusercontent.com/u/46491960" class="me">
@@ -33,49 +51,6 @@
             <p>
                 <a href="mailto:varl.avgust@yandex.ru">varl.avgust@yandex.ru</a>
             </p>
-            <div>
-                <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
-                <script type="text/javascript">
-                    if ('VKIDSDK' in window) {
-                        const VKID = window.VKIDSDK;
-
-                        VKID.Config.init({
-                            app: 52848711,
-                            redirectUrl: 'https://www.vicebar.site/',
-                            responseMode: VKID.ConfigResponseMode.Callback,
-                            source: VKID.ConfigSource.LOWCODE,
-                            scope: '', // Заполните нужными доступами по необходимости
-                        });
-
-                        const oneTap = new VKID.OneTap();
-
-                        oneTap.render({
-                            container: document.currentScript.parentElement,
-                            showAlternativeLogin: true,
-                            oauthList: [
-                                'ok_ru'
-                            ]
-                        })
-                            .on(VKID.WidgetEvents.ERROR, vkidOnError)
-                            .on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
-                                const code = payload.code;
-                                const deviceId = payload.device_id;
-
-                                VKID.Auth.exchangeCode(code, deviceId)
-                                    .then(vkidOnSuccess)
-                                    .catch(vkidOnError);
-                            });
-
-                        function vkidOnSuccess(data) {
-                            // Обработка полученного результата
-                        }
-
-                        function vkidOnError(error) {
-                            // Обработка ошибки
-                        }
-                    }
-                </script>
-            </div>
         </header>
         <div class="thirteen columns clearfix">
             <section class="thirteen columns">
@@ -226,20 +201,55 @@
                             href="https://www.strava.com/athletes/2444905">running</a>, food &amp; travel.</p>
                 </article>
             </section>
+
+
+            <div>
+                <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+                <script type="text/javascript">
+                    if ('VKIDSDK' in window) {
+                        const VKID = window.VKIDSDK;
+
+                        VKID.Config.init({
+                            app: 52848711,
+                            redirectUrl: 'https://www.vicebar.site/',
+                            responseMode: VKID.ConfigResponseMode.Callback,
+                            source: VKID.ConfigSource.LOWCODE,
+                            scope: '', // Заполните нужными доступами по необходимости
+                        });
+
+                        const oneTap = new VKID.OneTap();
+
+                        oneTap.render({
+                            container: document.currentScript.parentElement,
+                            showAlternativeLogin: true,
+                            oauthList: [
+                                'ok_ru'
+                            ]
+                        })
+                            .on(VKID.WidgetEvents.ERROR, vkidOnError)
+                            .on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+                                const code = payload.code;
+                                const deviceId = payload.device_id;
+
+                                VKID.Auth.exchangeCode(code, deviceId)
+                                    .then(vkidOnSuccess)
+                                    .catch(vkidOnError);
+                            });
+
+                        function vkidOnSuccess(data) {
+                            // Обработка полученного результата
+                        }
+
+                        function vkidOnError(error) {
+                            // Обработка ошибки
+                        }
+                    }
+                </script>
+            </div>
+
         </div>
+
     </div>
-
-    <!-- <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-39456503-2', 'auto');
-        ga('send', 'pageview');
-    </script> -->
 </body>
 
 </html>
