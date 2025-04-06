@@ -197,7 +197,11 @@
             </section>
             {% if is_auth %}
             <section class="six columns">
-                <h1>Рад видеть тебя, {{name}} {{surname}}</h1>
+                <h1>
+                    Рад видеть тебя,
+                    <span style="color: black;">{{name}}</span>
+                    <span style="color: black;">{{surname}}</span>
+                </h1>
             </section>
             {% endif %}
 
