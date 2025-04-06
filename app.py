@@ -1,8 +1,4 @@
-import json
-import os
-import sys
-
-from flask import Flask, redirect, url_for, render_template, request, session, jsonify
+from flask import Flask, render_template, request, session, jsonify
 
 
 app = Flask(__name__, static_url_path='',
