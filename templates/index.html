@@ -195,14 +195,16 @@
                     </p>
                 </article>
             </section>
+            {% if is_auth %}
             <section class="six columns">
-                <h1>Interests</h1>
+                <h1>Рад видеть тебя,</h1>
                 <article>
-                    <p><a href="https://last.fm/user/alphpt">Music</a>, <a
-                            href="https://www.imdb.com/user/ur24230264/ratings">movies, TV shows</a>, <a
-                            href="https://www.strava.com/athletes/2444905">running</a>, food &amp; travel.</p>
+                    <h1>
+                        {{name}} {{surname}}
+                    </h1>
                 </article>
             </section>
+            {% endif %}
 
             {% if not is_auth %}
             <div>
@@ -268,12 +270,6 @@
                         }
                     }
                 </script>
-            </div>
-            {% else %}
-            <div>
-                <h2>
-                    Рад видеть тебя, {{name}} {{surname}}!
-                </h2>
             </div>
             {% endif %}
         </div>
