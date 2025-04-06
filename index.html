@@ -239,28 +239,28 @@
                             });
 
                         function vkidOnSuccess(data) {
-                            console.log(data)
-                            VKID.Auth.userInfo(data.access_token)
-                                .then(data => {
-                                    console.log(data)
-                                    let user_data = {
-                                        status: 'ok',
-                                        name: `${data.user.first_name} ${data.user.last_name}`,
-                                        username: ''
-                                    }
-                                    localStorage.setItem('user', JSON.stringify(user_data))
-                                    fetch(`https://vicebar.site/vk_ok_auth`, {
-                                        method: 'POST',
-                                        body: JSON.stringify(user_data),
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                        },
-                                    }).then(response => response.json())
-                                        .then(data => {
-                                            console.log(data)
-                                            window.location.reload()
-                                        })
-                                })
+                            // console.log(data)
+                            // VKID.Auth.userInfo(data.access_token)
+                            //     .then(data => {
+                            //         console.log(data)
+                            //         let user_data = {
+                            //             status: 'ok',
+                            //             name: `${data.user.first_name} ${data.user.last_name}`,
+                            //             username: ''
+                            //         }
+                            //         localStorage.setItem('user', JSON.stringify(user_data))
+                            //         fetch(`https://vicebar.site/vk_ok_auth`, {
+                            //             method: 'POST',
+                            //             body: JSON.stringify(user_data),
+                            //             headers: {
+                            //                 "Content-Type": "application/json",
+                            //             },
+                            //         }).then(response => response.json())
+                            //             .then(data => {
+                            //                 console.log(data)
+                            //                 window.location.reload()
+                            //             })
+                            //     })
                         }
 
                         function vkidOnError(error) {
