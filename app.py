@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, session, jsonify
 
 app = Flask(__name__, static_url_path='',
             static_folder="static", template_folder="templates")
-app.secret_key = "secret key"
 
 
 @app.route("/vk_ok_auth", methods=["POST"])
